@@ -17,7 +17,7 @@ pub(crate) struct Runtime {
 
 impl Default for Runtime {
     fn default() -> Self {
-        let updater = Updater::new(&crate::UPDATE_APP, materialcraft_engine::VERSION).with_translator(translate);
+        let updater = Updater::new(&crate::UPDATE_APP, materialcraft_engine::VERSION).with_source(::std::sync::Arc::new(|| -> ::std::result::Result<::std::option::Option<::craft_update::Release>, ::std::string::String> { Err(::std::string::String::from("ICASYS apps are updated by ICASYS: https://icasys.mx / Las apps de ICASYS se actualizan desde ICASYS: https://icasys.mx")) })).with_translator(translate);
         Self { updater, startup_check: false, check_requested: false, repaint: None }
     }
 }

@@ -146,7 +146,7 @@ fn input_previews(ui: &mut Ui, graph: &Graph, resources: &[Resource], emit: &mut
                     }
                 });
                 #[cfg(not(target_arch = "wasm32"))]
-                if crate::widgets::icon_button(ui, icon::FOLDER_OPEN, tr("Pick an image file (a mesh map baked in TextureCraft)"), false, 18.0).clicked() {
+                if crate::widgets::icon_button(ui, icon::FOLDER_OPEN, tr("Pick an image file (a mesh map baked in ICASYS Texturas)"), false, 18.0).clicked() {
                     emit("ui.pickInputImage", json!({"identifier": id}));
                 }
             });

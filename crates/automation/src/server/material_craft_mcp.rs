@@ -226,7 +226,7 @@ impl MaterialCraftMcp {
     }
 
     #[tool(description = "Cook a graph at full size and write it as a portable .mcmat material (cooked maps, exposed inputs, \
-        source package) to a path relative to the write root, for TextureCraft. Optional graph, size and exposed input values. \
+        source package) to a path relative to the write root, for ICASYS Texturas. Optional graph, size and exposed input values. \
         Returns {path, bytes}.")]
     async fn material_export(&self, Parameters(p): Parameters<MaterialExportParams>) -> Result<CallToolResult, McpError> {
         to_result(self.call("material.export", params(&p)).await)

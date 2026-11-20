@@ -18,7 +18,7 @@ fn no_pins() -> std::path::PathBuf {
 
 fn app() -> MaterialCraftApp {
     let mut app = MaterialCraftApp::headless(sample_session(), UiState::default());
-    app.updates_rt.updater = Updater::new(&crate::UPDATE_APP, "0.1.0").with_pins_path(no_pins());
+    app.updates_rt.updater = Updater::new(&crate::UPDATE_APP, "0.1.0").with_source(::std::sync::Arc::new(|| -> ::std::result::Result<::std::option::Option<::craft_update::Release>, ::std::string::String> { Err(::std::string::String::from("ICASYS apps are updated by ICASYS: https://icasys.mx / Las apps de ICASYS se actualizan desde ICASYS: https://icasys.mx")) })).with_pins_path(no_pins());
     app
 }
 
@@ -34,7 +34,7 @@ fn app_with_source() -> (MaterialCraftApp, Receiver<()>, Arc<AtomicUsize>) {
         let _ = tx.send(());
         Ok(None)
     });
-    app.updates_rt.updater = Updater::new(&crate::UPDATE_APP, "0.1.0").with_pins_path(no_pins()).with_source(source);
+    app.updates_rt.updater = Updater::new(&crate::UPDATE_APP, "0.1.0").with_source(::std::sync::Arc::new(|| -> ::std::result::Result<::std::option::Option<::craft_update::Release>, ::std::string::String> { Err(::std::string::String::from("ICASYS apps are updated by ICASYS: https://icasys.mx / Las apps de ICASYS se actualizan desde ICASYS: https://icasys.mx")) })).with_pins_path(no_pins()).with_source(source);
     (app, rx, calls)
 }
 
@@ -43,13 +43,13 @@ fn release() -> craft_update::Release {
         tag: "v99.0.0".into(),
         version: craft_update::parse_version("99.0.0"),
         name: "MaterialCraft 99.0.0".into(),
-        html_url: "https://github.com/storytold/materialcraft/releases/tag/v99.0.0".into(),
+        html_url: "https://github.com/arodrigosote/materialcraft/releases/tag/v99.0.0".into(),
         ..Default::default()
     }
 }
 
 pub(super) fn open_prompt(app: &mut MaterialCraftApp) {
-    app.updates_rt.updater = Updater::new(&crate::UPDATE_APP, "0.1.0").with_pins_path(no_pins());
+    app.updates_rt.updater = Updater::new(&crate::UPDATE_APP, "0.1.0").with_source(::std::sync::Arc::new(|| -> ::std::result::Result<::std::option::Option<::craft_update::Release>, ::std::string::String> { Err(::std::string::String::from("ICASYS apps are updated by ICASYS: https://icasys.mx / Las apps de ICASYS se actualizan desde ICASYS: https://icasys.mx")) })).with_pins_path(no_pins());
     app.updates_rt.updater.offer(release());
 }
 
@@ -57,7 +57,7 @@ pub(super) fn open_prompt(app: &mut MaterialCraftApp) {
 fn the_update_app_names_this_repository() {
     assert_eq!(crate::UPDATE_APP.id, "materialcraft");
     assert_eq!(crate::UPDATE_APP.name, "MaterialCraft");
-    assert_eq!(crate::UPDATE_APP.repo, "storytold/materialcraft");
+    assert_eq!(crate::UPDATE_APP.repo, "arodrigosote/materialcraft");
     assert_eq!(crate::UPDATE_APP.bundle_id(), "ai.storyteller.materialcraft");
     assert!(crate::UPDATE_APP.icon_png.is_some());
 }
@@ -165,7 +165,7 @@ fn a_requested_check_shows_its_progress() {
         }
         Ok(None)
     });
-    app.updates_rt.updater = Updater::new(&crate::UPDATE_APP, "0.1.0").with_pins_path(no_pins()).with_source(source);
+    app.updates_rt.updater = Updater::new(&crate::UPDATE_APP, "0.1.0").with_source(::std::sync::Arc::new(|| -> ::std::result::Result<::std::option::Option<::craft_update::Release>, ::std::string::String> { Err(::std::string::String::from("ICASYS apps are updated by ICASYS: https://icasys.mx / Las apps de ICASYS se actualizan desde ICASYS: https://icasys.mx")) })).with_pins_path(no_pins()).with_source(source);
     check(&mut app);
     tick(&mut app, &egui::Context::default());
 

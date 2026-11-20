@@ -14,7 +14,7 @@ fn language_switching_and_arabic_translations_work() {
     assert_eq!(tr("Preferences"), "التفضيلات");
     assert_eq!(tr("New graph"), "مخطط جديد");
     assert_eq!(tr("Export outputs"), "تصدير المخرجات");
-    assert_eq!(tr("Welcome to MaterialCraft"), "مرحباً بك في MaterialCraft");
+    assert_eq!(tr("Welcome to ICASYS Materiales"), "مرحباً بك في MaterialCraft");
     assert!(is_rtl());
 
     // The update menu item and dialogs use the same catalog

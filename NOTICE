@@ -24,3 +24,9 @@ Builds made with craft-fonts (CRAFT_FONTS_DIR; all official releases) also embed
 in https://github.com/storytold/craft-fonts/blob/main/ATTRIBUTION.md (BIZ UDPGothic on desktop and
 web, Noto Sans CJK SC on desktop), under the SIL Open Font License 1.1. Their licence texts ship
 with the package as OFL-<family>.txt.
+
+ICASYS edition
+
+This is a modified version of MaterialCraft, published by ICASYS (https://icasys.mx).
+It is based on MaterialCraft by the ArtCraft team and community. The ArtCraft name and logos are not used.
+See ICASYS.md.

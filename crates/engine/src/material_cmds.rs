@@ -26,13 +26,13 @@ pub(crate) fn specs() -> Vec<CommandSpec> {
             "Export material...",
             ["File"],
             None,
-            "{path, graph?, size? (px, power of two), values? {input: value}, inputs? {identifier: image path}} cooks the graph and writes a portable .mcmat material (maps, exposed inputs, source package) for TextureCraft",
+            "{path, graph?, size? (px, power of two), values? {input: value}, inputs? {identifier: image path}} cooks the graph and writes a portable .mcmat material (maps, exposed inputs, source package) for ICASYS Texturas",
             has_graph,
             export_material
         ),
         cmd!(
             "file.sendToTextureCraft",
-            "Send to TextureCraft",
+            "Send to ICASYS Texturas",
             ["File"],
             None,
             "{graph?} exports the graph as a portable material into TextureCraft's library folder (Documents/TextureCraft/library), where its shelf lists it",
@@ -44,7 +44,7 @@ pub(crate) fn specs() -> Vec<CommandSpec> {
             "Set input preview image",
             [],
             None,
-            "{identifier, resource? | path?, linear?} shows a bitmap resource (or an image file, embedded) on the graph's input node `identifier`, e.g. a mesh map baked in TextureCraft",
+            "{identifier, resource? | path?, linear?} shows a bitmap resource (or an image file, embedded) on the graph's input node `identifier`, e.g. a mesh map baked in ICASYS Texturas",
             has_graph,
             bind
         ),
@@ -193,7 +193,7 @@ fn send_to_texturecraft(s: &mut Session, p: &J) -> Result<J> {
     let path = dir.join(format!("{}.{MATERIAL_EXT}", materialcraft_formats::safe_file_name(&s.pkg.graph(gi)?.name)));
     materialcraft_formats::write_atomic(&path, &bytes)?;
     let path = path.display().to_string();
-    s.log(format!("Sent to TextureCraft: {path}"));
+    s.log(format!("Sent to ICASYS Texturas: {path}"));
     Ok(json!({"path": path}))
 }
 

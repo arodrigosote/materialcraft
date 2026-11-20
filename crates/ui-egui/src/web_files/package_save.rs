@@ -55,7 +55,7 @@ impl PackageSave {
             let label = ui.label(tr("Name"));
             ui.text_edit_singleline(&mut request.name).labelled_by(label.id);
             ui.radio_value(&mut request.archive, false, tr("SBS XML Package (*.sbs)"));
-            ui.radio_value(&mut request.archive, true, tr("MaterialCraft Project (*.mcraft)"));
+            ui.radio_value(&mut request.archive, true, tr("ICASYS Materiales Project (*.mcraft)"));
             if !request.archive {
                 ui.label(tr("Downloads the SBS and resources together in a ZIP."));
             }

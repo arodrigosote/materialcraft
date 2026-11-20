@@ -33,7 +33,7 @@ use ExplorerRow::{Item, Separator, Sub};
 
 /// Linking keeps a resource outside the package; MaterialCraft only embeds resources so far
 pub(crate) const EXPLORER_LINK: &[(&str, &str)] = &[("Bitmap", ""), ("Vector graphics", "")];
-pub(crate) const EXPLORER_SEND_TO: &[(&str, &str)] = &[("TextureCraft", "file.sendToTextureCraft")];
+pub(crate) const EXPLORER_SEND_TO: &[(&str, &str)] = &[("ICASYS Texturas", "file.sendToTextureCraft")];
 /// Explorer actions that wrap engine commands or the operating system: computing every output,
 /// showing the package file and opening the packages it depends on
 pub(crate) const EXPLORER_COMPUTE: &str = "ui.explorer.computeOutputs";
@@ -99,7 +99,7 @@ pub const CATALOG: &[MenuItem] = &[
     it("File", "Import vector graphics...", "file.importVector", None),
     it("File", "Export outputs...", "ui.export", Some("Ctrl+Shift+E")),
     it("File", "Export material...", "file.exportMaterial", None),
-    it("File", "Send to TextureCraft", "file.sendToTextureCraft", None),
+    it("File", "Send to ICASYS Texturas", "file.sendToTextureCraft", None),
     it("File", "Reload resources", "ui.reloadResources", None),
     sep("File"),
     it("File", "Exit", "ui.quit", Some("Ctrl+Q")),
@@ -146,13 +146,13 @@ pub const CATALOG: &[MenuItem] = &[
     it("Help", "Documentation...", "ui.help.docs", None),
     it("Help", "Shortcuts list...", "ui.help.shortcuts", None),
     sep("Help"),
-    it("Help", "Join the community (Discord)...", "ui.help.discord", None),
-    it("Help", "ArtCraft website...", "ui.help.website", None),
+    it("Help", "ICASYS Community...", "ui.help.discord", None),
+    it("Help", "ICASYS Website...", "ui.help.website", None),
     it("Help", "Report a bug...", "ui.help.bug", None),
     sep("Help"),
     #[cfg(not(target_arch = "wasm32"))]
     it("Help", "Check for updates...", "ui.help.checkForUpdates", None),
-    it("Help", "About MaterialCraft...", "ui.about", None),
+    it("Help", "About ICASYS Materiales...", "ui.about", None),
 ];
 
 fn is_ui(id: &str) -> bool {
@@ -237,10 +237,10 @@ pub fn invoke(app: &mut MaterialCraftApp, ctx: &egui::Context, id: &str) {
         "ui.about" => app.ui.windows.about = true,
         #[cfg(not(target_arch = "wasm32"))]
         "ui.help.checkForUpdates" => crate::updates_ui::check(app),
-        "ui.help.discord" => ctx.open_url(egui::OpenUrl::new_tab("https://discord.gg/artcraft")),
-        "ui.help.website" => ctx.open_url(egui::OpenUrl::new_tab("https://getartcraft.com/apps/materialcraft")),
-        "ui.help.docs" => ctx.open_url(egui::OpenUrl::new_tab("https://github.com/storytold/materialcraft#readme")),
-        "ui.help.bug" => ctx.open_url(egui::OpenUrl::new_tab("https://github.com/storytold/materialcraft/issues")),
+        "ui.help.discord" => ctx.open_url(egui::OpenUrl::new_tab("https://icasys.mx")),
+        "ui.help.website" => ctx.open_url(egui::OpenUrl::new_tab("https://icasys.mx")),
+        "ui.help.docs" => ctx.open_url(egui::OpenUrl::new_tab("https://github.com/arodrigosote/materialcraft#readme")),
+        "ui.help.bug" => ctx.open_url(egui::OpenUrl::new_tab("https://github.com/arodrigosote/materialcraft/issues")),
         _ => {
             if crate::windows::file_action(app, ctx, id) {
                 return;

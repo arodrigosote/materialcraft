@@ -84,7 +84,7 @@ fn ask_destination(app: &mut MaterialCraftApp, tab: ExportTab) {
     let dialog = if tab == ExportTab::Mcmat {
         let graph = app.session.graph().map(|graph| graph.name.clone()).unwrap_or_default();
         let file = format!("{}.{MATERIAL_EXT}", materialcraft_engine::formats::safe_file_name(&graph));
-        craft_dialogs::FileDialog::save().file_name(file).filter("MaterialCraft material", &[MATERIAL_EXT])
+        craft_dialogs::FileDialog::save().file_name(file).filter("ICASYS Materiales material", &[MATERIAL_EXT])
     } else {
         craft_dialogs::FileDialog::folder()
     };

@@ -30,7 +30,7 @@ pub fn main_toolbar(app: &mut MaterialCraftApp, ui: &mut Ui) {
             ui.add_space(6.0);
             b(ui, icon::EXPORT, tr("Export outputs... (Ctrl+Shift+E)"), "ui.export", true);
             ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-                ui.label(RichText::new("MaterialCraft").strong().color(tk.accent));
+                ui.label(RichText::new("ICASYS Materiales").strong().color(tk.accent));
             });
         });
     });

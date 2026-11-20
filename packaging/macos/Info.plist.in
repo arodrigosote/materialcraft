@@ -7,9 +7,9 @@
   <key>CFBundleDevelopmentRegion</key>
   <string>en</string>
   <key>CFBundleDisplayName</key>
-  <string>MaterialCraft</string>
+  <string>ICASYS Materiales</string>
   <key>CFBundleName</key>
-  <string>MaterialCraft</string>
+  <string>ICASYS Materiales</string>
   <key>CFBundleExecutable</key>
   <string>MaterialCraft</string>
   <key>CFBundleIdentifier</key>
@@ -52,7 +52,7 @@
       <key>UTTypeIdentifier</key>
       <string>ai.storyteller.materialcraft.package</string>
       <key>UTTypeDescription</key>
-      <string>MaterialCraft Package</string>
+      <string>ICASYS Materiales Package</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -74,7 +74,7 @@
   <array>
     <dict>
       <key>CFBundleTypeName</key>
-      <string>MaterialCraft Package</string>
+      <string>ICASYS Materiales Package</string>
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>LSHandlerRank</key>

@@ -16,9 +16,9 @@
 /// graphics is named as the likely cause, not the certain one.
 pub(crate) fn message(error: &eframe::Error) -> String {
     match error {
-        eframe::Error::AppCreation(_) => format!("MaterialCraft could not start: {error}"),
+        eframe::Error::AppCreation(_) => format!("ICASYS Materiales could not start: {error}"),
         _ => format!(
-            "MaterialCraft's window could not start or stopped with an error: {error}\n\nIf this keeps happening, updating the graphics driver often fixes it."
+            "ICASYS Materiales' window could not start or stopped with an error: {error}\n\nIf this keeps happening, updating the graphics driver often fixes it."
         ),
     }
 }
@@ -27,7 +27,7 @@ pub(crate) fn message(error: &eframe::Error) -> String {
 pub(crate) fn report(error: &eframe::Error) {
     let message = message(error);
     log::error!("{message}");
-    let _ = rfd::MessageDialog::new().set_title("MaterialCraft").set_description(&message).set_level(rfd::MessageLevel::Error).show();
+    let _ = rfd::MessageDialog::new().set_title("ICASYS Materiales").set_description(&message).set_level(rfd::MessageLevel::Error).show();
 }
 
 #[cfg(test)]

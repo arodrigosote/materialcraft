@@ -1,0 +1,18 @@
+{
+  "app": "materialcraft",
+  "name": "ICASYS Materiales",
+  "slug": "materiales",
+  "upstream_name": "MaterialCraft",
+  "upstream_base": "65f7bfd3e5f40d695d03162285879f0f8079ff6c",
+  "owner": "arodrigosote",
+  "es_ui": false,
+  "deb_section": "graphics",
+  "cli": "materialcraft-cli",
+  "cli_project_ext": "mcraft",
+  "mcp": {
+    "headless": "mcp",
+    "attach": "mcp --bridge 9876",
+    "auth": "token",
+    "project": ""
+  }
+}

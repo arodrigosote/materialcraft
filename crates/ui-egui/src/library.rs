@@ -148,7 +148,7 @@ fn filter_menu(app: &mut MaterialCraftApp, ui: &mut Ui) {
     let response = crate::widgets::icon_button(ui, icon::FUNNEL, tr("Filter"), filtered, 22.0);
     egui::Popup::menu(&response).show(|ui| {
         ui.set_min_width(240.0);
-        ui.checkbox(&mut app.ui.library_show_missing, tr("Show nodes not in MaterialCraft yet"));
+        ui.checkbox(&mut app.ui.library_show_missing, tr("Show nodes not in ICASYS Materiales yet"));
         ui.checkbox(&mut app.ui.library_show_other, tr("Show nodes for other graph types"));
     });
 }
